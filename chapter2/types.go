@@ -82,3 +82,11 @@ func (l Lead) Convert(ctx context.Context, subSelection SubscriptionType) (Custo
 	//TODO implement
 	panic("to implement!")
 }
+
+type UserHandler interface {
+	IsUserSubscriptionActive(ctx context.Context, userID string) bool
+}
+
+type UserActiveResponse struct {
+	IsActive bool
+}
